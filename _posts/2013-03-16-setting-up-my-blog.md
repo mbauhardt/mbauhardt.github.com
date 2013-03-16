@@ -3,11 +3,11 @@ layout: post
 title: "Setting Up This Blog"
 description: ""
 category: 
-tags: [git, jekyll-bootsrap]
+tags: [git, jekyll-bootstrap]
 ---
 {% include JB/setup %}
 
-As a first step i forked the [plusjade/jekyll-boostrap](https://github.com/plusjade/jekyll-bootstrap) project into [MyUserName/jekyll-bootstrap](https://github.com/MyUserName/jekyll-bootstrap). This gives me the following options
+As a first step i forked the [plusjade/jekyll-bootstrap](https://github.com/plusjade/jekyll-bootstrap) project into [MyUserName/jekyll-bootstrap](https://github.com/MyUserName/jekyll-bootstrap). This gives me the following options
 
 * change something in the origin code and provide this as a pull request commited into the _jb-development_ branch
 * create a separate branch for my blog
