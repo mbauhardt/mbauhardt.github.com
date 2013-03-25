@@ -14,7 +14,7 @@ I'm a big fan of the [solarized color scheme](http://ethanschoonover.com/solariz
 * [Eclipse](http://www.eclipse.org/)
 
 And now i implemented some lines of css which provides the solarized dark color theme for my blog, created with jekyll bootstrap.
-I created a file called _solarized-dark.css_._
+I created a file called _solarized-dark.css_.
 
     /*
     base03    #002b36
