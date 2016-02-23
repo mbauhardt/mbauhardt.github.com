@@ -25,8 +25,13 @@ Thats it!
 Here are the steps i did as screenshots.
 
 ![fdisk](/assets/img/screenshot_1.png)
+
 ![fdisk](/assets/img/screenshot_2.png)
+
 ![fdisk](/assets/img/screenshot_3.png)
+
 ![fdisk](/assets/img/screenshot_4.png)
+
 ![fdisk](/assets/img/screenshot_5.png)
+
 ![fdisk](/assets/img/screenshot_6.png)
