@@ -12,6 +12,8 @@ After reading some blog posts i found [this one](https://johncireland.wordpress.
 So i followed the steps described there to decrypt my configuration. With success. I decrypted my configuration with 
 
     openssl enc -aes-256-cbc -d -a -in <my-encrypted-config-file> -out decrypted-version.xml
+    
+I created an issue on the [sourceforge bugtracker]((https://sourceforge.net/p/nas4free/bugs/276/)).
 
 Restoring the decrypted configuration was no issue for nas4free. I was able to upgrade my nas4free machine to version 10.2.0.2 without any big issues.
 
