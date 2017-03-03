@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Better GPG Keychain"
-tags: [gpg, ernst]
+tags: [gpg]
 ---
 
 ## Background
