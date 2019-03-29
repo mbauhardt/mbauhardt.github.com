@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll Bootstrap on mb&#39;s blog</title>
+    <link>https://mbauhardt.github.io/tags/jekyll-bootstrap/</link>
+    <description>Recent content in Jekyll Bootstrap on mb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;impressum&#39;&gt;Impressum&lt;/a&gt;&#39;</copyright>
+    <lastBuildDate>Sun, 17 Mar 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mbauhardt.github.io/tags/jekyll-bootstrap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Implement Solarized Color Theme For Jekyll Bootstrap</title>
+      <link>https://mbauhardt.github.io/post/2013/03/17/implement-solarized-color-theme-for-jekyll-bootstrap/</link>
+      <pubDate>Sun, 17 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/03/17/implement-solarized-color-theme-for-jekyll-bootstrap/</guid>
+      <description>I&amp;rsquo;m a big fan of the solarized color scheme. I use solarized dark for
+ iTerm in combination with my fork of the agnoster ohmyzsh theme. Emacs Eclipse  And now i implemented some lines of css which provides the solarized dark color theme for my blog, created with jekyll bootstrap. I created a file called solarized-dark.css.
+/* base03 #002b36 base02 #073642 base01 #586e75 base00 #657b83 base0 #839496 base1 #93a1a1 base2 #eee8d5 base3 #fdf6e3 yellow #b58900 orange #cb4b16 red #dc322f magenta #d33682 violet #6c71c4 blue #268bd2 cyan #2aa198 green #859900 base0: primary content base1: optional emphasized content base01: secondary content base02: background highlights base03: background */ body { background-color: #002b36; color: #839496; font-family: Menlo; } pre { border-style:solid; border-width:1px; border-color:#839496; } pre, code { background-color: #073642; color: #93a1a1; } a { color: #859900; } .</description>
+    </item>
+    
+    <item>
+      <title>Setting Up This Blog</title>
+      <link>https://mbauhardt.github.io/post/2013/03/16/setting-up-this-blog/</link>
+      <pubDate>Sat, 16 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/03/16/setting-up-this-blog/</guid>
+      <description>As a first step i forked the plusjade/jekyll-bootstrap project into MyUserName/jekyll-bootstrap. This gives me the following options
+ change something in the origin code and provide this as a pull request commited into the jb-development branch create a separate branch for my blog cherry-pick my changes into the blog branch update my blog branch with the latest changes from master  Now it is time to create the empty user repository on github, see github help.</description>
+    </item>
+    
+  </channel>
+</rss>

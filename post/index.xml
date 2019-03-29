@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on mb&#39;s blog</title>
+    <link>https://mbauhardt.github.io/post/</link>
+    <description>Recent content in Posts on mb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;impressum&#39;&gt;Impressum&lt;/a&gt;&#39;</copyright>
+    <lastBuildDate>Thu, 20 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mbauhardt.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keychain2Pass - Migrate Your OSX Keychain To Pass</title>
+      <link>https://mbauhardt.github.io/post/2017/07/20/keychain2pass-migrate-your-osx-keychain-to-pass/</link>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2017/07/20/keychain2pass-migrate-your-osx-keychain-to-pass/</guid>
+      <description>In my previous blog post wrote about a better GPG keychain. I&amp;rsquo;m using a yubikey to encrypt/decrypt documents.
+Why not using the yubikey key for my passwords too? So i decided to store my passwords no more in my OSX keychain. I wanted to switch from OSX keychain to pass.
+It turns out that the manual migration from the OSX keychain to pass is really time consuming. I was to lazy to it manually.</description>
+    </item>
+    
+    <item>
+      <title>A Better GPG Keychain</title>
+      <link>https://mbauhardt.github.io/post/2017/03/03/a-better-gpg-keychain/</link>
+      <pubDate>Fri, 03 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2017/03/03/a-better-gpg-keychain/</guid>
+      <description>Background My personal goal is to have a GPG keychain i use on more than one machine. I don&amp;rsquo;t want to loose all my signatures in case i lost my key. After reading the internet i figure it out how can i achieve a better GPG keychain.
+The approach of a master keypair and a bunch of subkeys will minimize the damage of the worst case (loosing my keypair). So i would like to explain what the benefit of subkeys are and how to generate subkeys.</description>
+    </item>
+    
+    <item>
+      <title>Upgrade Nas4Free from 9.3.0.2 to 10.2.0.2</title>
+      <link>https://mbauhardt.github.io/post/2016/03/11/upgrade-nas4free-from-9.3.0.2-to-10.2.0.2/</link>
+      <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2016/03/11/upgrade-nas4free-from-9.3.0.2-to-10.2.0.2/</guid>
+      <description>I upgraded my nas machine which is based on nas4free this wednesday. Everything went smooth. I made a backup of my current configuration. I uploaded the new 10.2.0.2.2332 image and after some minutes my server reboots automatically. After this I was able to login. The upgrade procedure described to restore my previous configuration. But this failed. The browser showed me the error XML error: Not well-formed (invalid token) at line 1.</description>
+    </item>
+    
+    <item>
+      <title>Oh My Zsh Bootstrap, A Small Oh My Zsh Plugin Manager</title>
+      <link>https://mbauhardt.github.io/post/2013/04/13/oh-my-zsh-bootstrap-a-small-oh-my-zsh-plugin-manager/</link>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/04/13/oh-my-zsh-bootstrap-a-small-oh-my-zsh-plugin-manager/</guid>
+      <description>I started a small but helpful project oh-my-zsh-bootstrap to maintain my oh-my-zsh. Oh My Zsh Bootstrap is plugin for Oh My Zsh which provides commands to maintain your plugins and themes
+ enable_plugin disable_plugin download_plugin update_plugin
+ enable_theme
+ download_theme
+ update_theme
+  You can install Oh My Zsh Bootstrap with a onliner
+curl -L https://github.com/mbauhardt/oh-my-zsh-bootstrap/raw/master/tools/install.zsh | zsh  </description>
+    </item>
+    
+    <item>
+      <title>Change Size Of Partition On SDcard To Get More Space For My Raspberry Pi</title>
+      <link>https://mbauhardt.github.io/post/2013/03/24/change-size-of-partition-on-sdcard-to-get-more-space-for-my-raspberry-pi/</link>
+      <pubDate>Sun, 24 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/03/24/change-size-of-partition-on-sdcard-to-get-more-space-for-my-raspberry-pi/</guid>
+      <description>I&amp;rsquo;m using my raspberry pi as a router on my private network. Yesterday i&amp;rsquo;m getting the no space left on device error message. I recognized that only the half size of the sd card was used. So i had to resize the root partition.
+These steps you have todo to resize your /root partition. I did this on my arch linux arm installation.
+ Open fdisk fdisk /dev/mmcblk0 Hit option p to get a list of partitions.</description>
+    </item>
+    
+    <item>
+      <title>Using Git To Create Backup&#39;s</title>
+      <link>https://mbauhardt.github.io/post/2013/03/18/using-git-to-create-backups/</link>
+      <pubDate>Mon, 18 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/03/18/using-git-to-create-backups/</guid>
+      <description>When you want to use git to backup your local documents on an usb stick, you can do the following steps.
+1) Create Empty Git Repository
+mkdir /Volumes/usb-stick/Documents.git cd /Volumes/usb-stick/Documents.git git --bare init  2) Create A First Backup Your Documents
+cd ~/Documents git init git add ./ git commit git remote add origin /Volumes/usb-stick/Documents.git git push -u origin master  3) Backup New Files
+cd ~/Documents git add . git commit git push  4) You Can Also Clone Your Backup On Another Machine Or Folder</description>
+    </item>
+    
+    <item>
+      <title>Implement Solarized Color Theme For Jekyll Bootstrap</title>
+      <link>https://mbauhardt.github.io/post/2013/03/17/implement-solarized-color-theme-for-jekyll-bootstrap/</link>
+      <pubDate>Sun, 17 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/03/17/implement-solarized-color-theme-for-jekyll-bootstrap/</guid>
+      <description>I&amp;rsquo;m a big fan of the solarized color scheme. I use solarized dark for
+ iTerm in combination with my fork of the agnoster ohmyzsh theme. Emacs Eclipse  And now i implemented some lines of css which provides the solarized dark color theme for my blog, created with jekyll bootstrap. I created a file called solarized-dark.css.
+/* base03 #002b36 base02 #073642 base01 #586e75 base00 #657b83 base0 #839496 base1 #93a1a1 base2 #eee8d5 base3 #fdf6e3 yellow #b58900 orange #cb4b16 red #dc322f magenta #d33682 violet #6c71c4 blue #268bd2 cyan #2aa198 green #859900 base0: primary content base1: optional emphasized content base01: secondary content base02: background highlights base03: background */ body { background-color: #002b36; color: #839496; font-family: Menlo; } pre { border-style:solid; border-width:1px; border-color:#839496; } pre, code { background-color: #073642; color: #93a1a1; } a { color: #859900; } .</description>
+    </item>
+    
+    <item>
+      <title>Setting Up This Blog</title>
+      <link>https://mbauhardt.github.io/post/2013/03/16/setting-up-this-blog/</link>
+      <pubDate>Sat, 16 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/03/16/setting-up-this-blog/</guid>
+      <description>As a first step i forked the plusjade/jekyll-bootstrap project into MyUserName/jekyll-bootstrap. This gives me the following options
+ change something in the origin code and provide this as a pull request commited into the jb-development branch create a separate branch for my blog cherry-pick my changes into the blog branch update my blog branch with the latest changes from master  Now it is time to create the empty user repository on github, see github help.</description>
+    </item>
+    
+  </channel>
+</rss>

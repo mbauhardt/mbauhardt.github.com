@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html
+  class=""
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<meta name="keywords" content="gpg,
+">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="A Better GPG Keychain" />
+<meta property="og:site_name" content="mb&#39;s blog" />
+<meta property="og:image" content="" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<meta property="og:url" content="https://mbauhardt.github.io/post/2017/03/03/a-better-gpg-keychain/" />
+<meta property="og:locale" content="en-us" />
+<meta property="article:published_time" content="2017-03-03
+" /> <meta property="article:modified_time" content="2017-03-03
+" />
+
+
+<meta property="article:tag" content="gpg" />
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@mbauhardt" />
+<meta name="twitter:creator" content="@mbauhardt" />
+<meta
+  name="twitter:title"
+  content="A Better GPG Keychain | mb&#39;s blog"
+/>
+<meta
+  name="twitter:description"
+  content="Background My personal goal is to have a GPG keychain i use on more than one machine. I don&rsquo;t want to loose all my signatures in case i lost my key. After reading the internet i figure it out how can i achieve a better GPG keychain.
+The approach of a master keypair and a bunch of subkeys will minimize the damage of the worst case (loosing my keypair). So i would like to explain what the benefit of subkeys are and how to generate subkeys.|"
+/>
+<meta name="twitter:image:src" content="" />
+<meta name="twitter:domain" content="https://mbauhardt.github.io/post/2017/03/03/a-better-gpg-keychain/" />
+
+
+    <title>A Better GPG Keychain</title>
+    <link rel="canonical" href="https://mbauhardt.github.io/post/2017/03/03/a-better-gpg-keychain/" />
+
+    <link
+      href=""
+      rel="alternate"
+      type="application/rss+xml"
+      title="A Better GPG Keychain"
+    />
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
+/>
+
+<link rel="stylesheet" href="https://mbauhardt.github.iocss/style.css" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
+/>
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+</html>
+
+<body
+  lang="en-us"
+  class="sans-serif w-90 w-80-m w-60-ns center mv2 mv5-ns"
+  itemscope
+  itemtype="http://schema.org/Article"
+>
+  
+  <span class="b">/ </span>
+  <a href="https://mbauhardt.github.io" class="b bb bw1 pb1 no-underline black">mb&#39;s blog</a>
+  <span class="b"> / </span>
+  <a href="/post" class="b bb bw1 pb1 no-underline black">blog</a>
+
+  <section id="main" class="mt5">
+    <h1 itemprop="name" id="title">A Better GPG Keychain</h1>
+    <span class="f6 gray">March 3, 2017</span>
+
+      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+        
+
+<h2 id="background">Background</h2>
+
+<p>My personal goal is to have a GPG keychain i use on more than one machine. I don&rsquo;t want to loose all my signatures in case i lost my key.
+After reading the internet i figure it out how can i achieve a better GPG keychain.</p>
+
+<p>The approach of a master keypair and a bunch of subkeys will minimize the damage of the worst case (loosing my keypair). So i would like to explain what the benefit of subkeys are and how to generate subkeys.</p>
+
+<p>In general if you have your keypair on your laptop and this laptop is stolen by an attacker then you want to revoke your key and publish the revoked key on a keyserver. And that means that you will loose all your signatures you maybe collected in the past few years. Subkeys can help you to minimze the damage in case you will loose your key but it will not prevent the attacker to use your stolen private subkey to decrypt messages which was encrypted with the related public key. Also signatures can be done with that stolen key but can not be verified with the related revoked public key.</p>
+
+<p>The concept behind subkeys can be explained as</p>
+
+<ul>
+<li>Generate a keypair which contains <strong>only</strong> a cerification key.</li>
+<li>Adding three subkeys. A signing key, an encryption key and an authentication key.</li>
+<li>Generate a revocation certificate from the primary key and the containing subkeys.</li>
+<li>This is your <strong>master keypair</strong>. Put it on a safe place.</li>
+<li>Copy this keypair on your computer where you want to use it (e.g. your laptop) and use GPG to remove the <em>certification key</em>. Only your subkeys remain in this this keyring and this keyring is called <strong>Laptop Keypair</strong>.</li>
+</ul>
+
+<p>The laptop keypair is there to encrypt/decrypt messages, to sign messages and todo SSH logins.</p>
+
+<p>The advantage of this configuration is that in case this keypair is stolen you have only to revoke the subkeys. You will not loose the signatures because the signatures are saved onto the master keypair.</p>
+
+<h2 id="generate-master-keypair">Generate master keypair</h2>
+
+<p>Use <code>gpg --expert --gen-key</code>, choose option (8) RSA with own capabilities. Toggle <em>Sign</em> and <em>Encrypt</em> that the current allowed action is <em>Ceritify</em> only. Save the keyair with keylength 4096 and choose that the key does not expire. Adding also your name and email to this key.</p>
+
+<h2 id="generate-subkeys">Generate Subkeys</h2>
+
+<p>Use <code>gpg --expert --edit-key &lt;KEYID&gt;</code> to open the menu to be able to edit the key. Use <code>addkey</code>, choose option (8) RSA with own capabilities. Toggle <em>Encryption</em> and <em>Authentication</em> to have a key which is there for <em>Signing</em> only. Choose a keylength of <em>4096</em> and let the key expire. I&rsquo;m using one year and i&rsquo;m adding every year new subkeys.</p>
+
+<p>Do the same for two more subkeys. But toggle the capabilities to get a key for <em>Encryption</em> and another key for <em>Authentication</em>.
+At the end you have a keypair which contains your ceritifation key and three subkeys, one for signing, one for encryption and one for authentication.</p>
+
+<h2 id="create-revocation-certificate">Create Revocation Certificate</h2>
+
+<p>If you will loose your <em>master keypair</em> the <em>revocation certificate</em> is the only way to communicate that your keypair is stolen and must be ignored. This step is urgent and should not be ignored or skipped.</p>
+
+<p>Use <code>gpg --output &lt;YOUR_EMAIL&gt;.gpg-revocation-certificate --gen-revoke &lt;YOUR_EMAIL&gt;</code> and choose a reason for the revocation. Put that revocation certificate also on a safe place.</p>
+
+<h2 id="export-the-whole-keypair">Export the whole keypair</h2>
+
+<p>First export your private key with <code>gpg --export-secret-keys --armor &lt;YOUR_EMAIL&gt; &gt; &lt;YOUR_EMAIL&gt;.private.gpg-key</code>. After that export your public key with <code>gpg --export --armor &lt;YOUR_EMAIL&gt; &gt; &lt;YOUR_EMAIL&gt;.public.gpg-key</code>.</p>
+
+<p>Put these two key files, the private and the public, together with the revocation certificate on a safe place. These three files are called your <strong>master keypair</strong>.</p>
+
+<h2 id="transform-your-master-keypair-into-a-laptop-keypair">Transform your Master Keypair into a Laptop Keypair</h2>
+
+<p>There is only one step you have todo to transform your master keypair into a laptop keyair. You have to remove the private certification key from the whole keypair. In gpg version &gt; <code>2.0</code> it is much easier or more convenience. This documentation is made for gpg version <code>2.0.30</code>.
+So what you have todo is to export the secret subkeys by executing the command <code>gpg --export-secret-subkeys &lt;YOUR_EMAIL&gt; &gt; subkeys</code>. Then delete all secret keys from the keypair by executing <code>gpg --delete-secret-key &lt;YOUR_EMAIL&gt;</code> and import the subkeys back with <code>gpg --import subkeys</code>. At the end don&rsquo;t forget to delete the previous exported <code>subkeys</code> via <code>rm subkeys</code> or better <code>shred --remove subkeys</code>.
+You will see that your private key is marked with <code>sec#</code> when using <code>gpg -K</code>. The sign <code>#</code> is there to mark a secret key as <em>not available</em>.</p>
+
+<h2 id="revoke-subkeys">Revoke Subkeys</h2>
+
+<p>In case your laptop keypair is stolen you use your master keypair to revoke your subkeys. Your are doing this by import your private and public key from the master keypair. <code>gpg --import /path/to/&lt;YOUR_EMAIL&gt;.public.gpg-key /path/to/&lt;YOUR_EMAIL&gt;.private.gpg-key</code>. <code>gpg --edit-key &lt;YOUR_EMAIL&gt;</code>. Select all 3 subkeys via <code>key 1</code>, <code>key 2</code> and <code>key 3</code>. Use <code>revkey</code> to revoke the selected subkeys and execute <code>save</code> to save the changed keyring. After that upload the revoked keys to a keyserver.</p>
+
+<h2 id="smartcard">Smartcard</h2>
+
+<p>I want to go one step further. I don&rsquo;t want to leave any foot print on my laptop. So the <em>laptop key</em> is not that ideal goal for me. The idea is to move the generated private subkeys to a smartcard. And copy only the public keys to the laptop. A <a href="https://www.yubico.com">yubikey</a> satisfy the configuration i want to have. The next section sould give you a rough overview what you can do to put your private keys onto the yubikey.</p>
+
+<p>At the beginning configure your yubikey into super combo mode by using the command <code>ykpersonalize -m 86</code>. After that use <code>gpg --card-edit</code> to change the <strong>admin pin</strong> from <code>12345678</code> to your own PIN. Do the same for the <strong>user pin</strong> and change the default PIN <code>123456</code> to your own PIN. The user pin is the pin you have to use every day while using the smartcard. You can also personalize your yubikey by providing your name, the url to your public key.</p>
+
+<p>Using <code>gpg --edit-key &lt;YOUR_EMAIL&gt;</code> and <code>toggle</code> to show your private subkeys. Select step by step all of your private subkeys e.g. select your first subkey with <code>key 1</code> and use <code>keytocard</code> to move your subkey. When you move your key you have also to select the &ldquo;slot&rdquo; where you want to move your key to. So a signature key has its own slot, as well as the encryption and authentcation key (see Sources). Do the same steps for the rest of your keys via <code>key 2</code> and <code>key 3</code>.</p>
+
+<p>If you moved your key you can use <code>gpg -K</code> to list your private keys. A moved key is marked with <code>&gt;</code> or more accurate <code>ssb&gt;</code>.
+E.g. the output of my private keys are</p>
+
+<pre><code>[Tue 28, 21:34] 0 % gpg -K
+/Users/marko/.gnupg/secring.gpg
+-------------------------------
+sec#  4096R/53192101 2015-08-16
+uid                  Marko Bauhardt &lt;marko.bauhardt@mailbox.org&gt;
+uid                  Marko Bauhardt (Datameer GmbH) &lt;mb@datameer.com&gt;
+ssb&gt;  4096R/8E4E2613 2017-01-28
+ssb&gt;  4096R/55E95007 2017-01-28
+ssb&gt;  4096R/D8F097DF 2017-01-28
+</code></pre>
+
+<p>As you can see all my private keys are not stored on disk. The certification key does not exists in my keyring <code>sec#</code>. The private subkeys are also not stored in my keyring but they are moved to a smartcard <code>ssb&gt;</code>.</p>
+
+<h2 id="where-the-smartcard-can-be-use">Where the smartcard can be use</h2>
+
+<p>So there are some areas where the GPG smartcard can be use. Here are several applications</p>
+
+<ul>
+<li>Protect documents</li>
+<li>Email conversation</li>
+<li>Ssh logins</li>
+<li>Pull/Push (which can be done via ssh) to <a href="https://github.com">Github</a></li>
+<li>Sign git commits</li>
+<li>Password manager like <a href="https://www.passwordstore.org">pass</a></li>
+</ul>
+
+<h4 id="sources">Sources</h4>
+
+<ul>
+<li><a href="https://nightsi.de/das-perfekte-gpg-schlusselpaar-generieren">https://nightsi.de/das-perfekte-gpg-schlusselpaar-generieren</a></li>
+<li><a href="https://alexcabal.com/creating-the-perfect-gpg-keypair/">https://alexcabal.com/creating-the-perfect-gpg-keypair/</a></li>
+<li><a href="https://www.void.gr/kargig/blog/2013/12/02/creating-a-new-gpg-key-with-subkeys/">https://www.void.gr/kargig/blog/2013/12/02/creating-a-new-gpg-key-with-subkeys/</a></li>
+<li><a href="https://wiki.debian.org/Subkeys">https://wiki.debian.org/Subkeys</a></li>
+<li><a href="https://malcolmsparks.com/posts/yubikey-gpg.html">https://malcolmsparks.com/posts/yubikey-gpg.html</a></li>
+<li><a href="https://developers.yubico.com/PGP/Importing_keys.html">https://developers.yubico.com/PGP/Importing_keys.html</a></li>
+</ul>
+
+      </article>
+
+      
+      <span class="f6 gray mv3" title="Lastmod: March 3, 2017. Published at: 2017-03-03.">
+        
+      </span>
+
+      
+        <section class="mt4">
+          
+          
+          <h3>👋 Related posts in the <a href="/series/" class="b bb bw1 pb1 no-underline black">[Security]</a> series...</h3>
+      
+          
+         
+          
+            <div class="ph2 i">
+              No follow up posts yet. Check back soon!
+            </div>    
+          
+        </section>
+      
+
+  </section>
+
+  <footer>
+    <div>
+      <p class="f6 gray mt6 lh-copy">
+        © 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. Made by <a href='https://twitter.com/siegerts'>@siegerts</a>. </br><a href='impressum'>Impressum</a>'
+      </p>
+    </div>
+  </footer>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+  </body>
+  </html>
+</body>

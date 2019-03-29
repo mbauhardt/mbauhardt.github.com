@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nas4free on mb&#39;s blog</title>
+    <link>https://mbauhardt.github.io/tags/nas4free/</link>
+    <description>Recent content in Nas4free on mb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;impressum&#39;&gt;Impressum&lt;/a&gt;&#39;</copyright>
+    <lastBuildDate>Fri, 11 Mar 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mbauhardt.github.io/tags/nas4free/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Upgrade Nas4Free from 9.3.0.2 to 10.2.0.2</title>
+      <link>https://mbauhardt.github.io/post/2016/03/11/upgrade-nas4free-from-9.3.0.2-to-10.2.0.2/</link>
+      <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2016/03/11/upgrade-nas4free-from-9.3.0.2-to-10.2.0.2/</guid>
+      <description>I upgraded my nas machine which is based on nas4free this wednesday. Everything went smooth. I made a backup of my current configuration. I uploaded the new 10.2.0.2.2332 image and after some minutes my server reboots automatically. After this I was able to login. The upgrade procedure described to restore my previous configuration. But this failed. The browser showed me the error XML error: Not well-formed (invalid token) at line 1.</description>
+    </item>
+    
+  </channel>
+</rss>

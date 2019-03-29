@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on mb&#39;s blog</title>
+    <link>https://mbauhardt.github.io/tags/git/</link>
+    <description>Recent content in Git on mb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;impressum&#39;&gt;Impressum&lt;/a&gt;&#39;</copyright>
+    <lastBuildDate>Mon, 18 Mar 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mbauhardt.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Git To Create Backup&#39;s</title>
+      <link>https://mbauhardt.github.io/post/2013/03/18/using-git-to-create-backups/</link>
+      <pubDate>Mon, 18 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/03/18/using-git-to-create-backups/</guid>
+      <description>When you want to use git to backup your local documents on an usb stick, you can do the following steps.
+1) Create Empty Git Repository
+mkdir /Volumes/usb-stick/Documents.git cd /Volumes/usb-stick/Documents.git git --bare init  2) Create A First Backup Your Documents
+cd ~/Documents git init git add ./ git commit git remote add origin /Volumes/usb-stick/Documents.git git push -u origin master  3) Backup New Files
+cd ~/Documents git add . git commit git push  4) You Can Also Clone Your Backup On Another Machine Or Folder</description>
+    </item>
+    
+    <item>
+      <title>Setting Up This Blog</title>
+      <link>https://mbauhardt.github.io/post/2013/03/16/setting-up-this-blog/</link>
+      <pubDate>Sat, 16 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/03/16/setting-up-this-blog/</guid>
+      <description>As a first step i forked the plusjade/jekyll-bootstrap project into MyUserName/jekyll-bootstrap. This gives me the following options
+ change something in the origin code and provide this as a pull request commited into the jb-development branch create a separate branch for my blog cherry-pick my changes into the blog branch update my blog branch with the latest changes from master  Now it is time to create the empty user repository on github, see github help.</description>
+    </item>
+    
+  </channel>
+</rss>

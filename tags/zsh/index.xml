@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zsh on mb&#39;s blog</title>
+    <link>https://mbauhardt.github.io/tags/zsh/</link>
+    <description>Recent content in Zsh on mb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;impressum&#39;&gt;Impressum&lt;/a&gt;&#39;</copyright>
+    <lastBuildDate>Sat, 13 Apr 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mbauhardt.github.io/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oh My Zsh Bootstrap, A Small Oh My Zsh Plugin Manager</title>
+      <link>https://mbauhardt.github.io/post/2013/04/13/oh-my-zsh-bootstrap-a-small-oh-my-zsh-plugin-manager/</link>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2013/04/13/oh-my-zsh-bootstrap-a-small-oh-my-zsh-plugin-manager/</guid>
+      <description>I started a small but helpful project oh-my-zsh-bootstrap to maintain my oh-my-zsh. Oh My Zsh Bootstrap is plugin for Oh My Zsh which provides commands to maintain your plugins and themes
+ enable_plugin disable_plugin download_plugin update_plugin
+ enable_theme
+ download_theme
+ update_theme
+  You can install Oh My Zsh Bootstrap with a onliner
+curl -L https://github.com/mbauhardt/oh-my-zsh-bootstrap/raw/master/tools/install.zsh | zsh  </description>
+    </item>
+    
+  </channel>
+</rss>

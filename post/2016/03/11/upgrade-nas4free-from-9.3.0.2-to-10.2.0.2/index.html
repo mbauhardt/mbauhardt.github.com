@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html
+  class=""
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<meta name="keywords" content="nas4free,
+">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="Upgrade Nas4Free from 9.3.0.2 to 10.2.0.2" />
+<meta property="og:site_name" content="mb&#39;s blog" />
+<meta property="og:image" content="" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<meta property="og:url" content="https://mbauhardt.github.io/post/2016/03/11/upgrade-nas4free-from-9.3.0.2-to-10.2.0.2/" />
+<meta property="og:locale" content="en-us" />
+<meta property="article:published_time" content="2016-03-11
+" /> <meta property="article:modified_time" content="2016-03-11
+" />
+
+
+<meta property="article:tag" content="nas4free" />
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@mbauhardt" />
+<meta name="twitter:creator" content="@mbauhardt" />
+<meta
+  name="twitter:title"
+  content="Upgrade Nas4Free from 9.3.0.2 to 10.2.0.2 | mb&#39;s blog"
+/>
+<meta
+  name="twitter:description"
+  content="I upgraded my nas machine which is based on nas4free this wednesday. Everything went smooth. I made a backup of my current configuration. I uploaded the new 10.2.0.2.2332 image and after some minutes my server reboots automatically. After this I was able to login. The upgrade procedure described to restore my previous configuration. But this failed. The browser showed me the error XML error: Not well-formed (invalid token) at line 1.|"
+/>
+<meta name="twitter:image:src" content="" />
+<meta name="twitter:domain" content="https://mbauhardt.github.io/post/2016/03/11/upgrade-nas4free-from-9.3.0.2-to-10.2.0.2/" />
+
+
+    <title>Upgrade Nas4Free from 9.3.0.2 to 10.2.0.2</title>
+    <link rel="canonical" href="https://mbauhardt.github.io/post/2016/03/11/upgrade-nas4free-from-9.3.0.2-to-10.2.0.2/" />
+
+    <link
+      href=""
+      rel="alternate"
+      type="application/rss+xml"
+      title="Upgrade Nas4Free from 9.3.0.2 to 10.2.0.2"
+    />
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
+/>
+
+<link rel="stylesheet" href="https://mbauhardt.github.iocss/style.css" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
+/>
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+</html>
+
+<body
+  lang="en-us"
+  class="sans-serif w-90 w-80-m w-60-ns center mv2 mv5-ns"
+  itemscope
+  itemtype="http://schema.org/Article"
+>
+  
+  <span class="b">/ </span>
+  <a href="https://mbauhardt.github.io" class="b bb bw1 pb1 no-underline black">mb&#39;s blog</a>
+  <span class="b"> / </span>
+  <a href="/post" class="b bb bw1 pb1 no-underline black">blog</a>
+
+  <section id="main" class="mt5">
+    <h1 itemprop="name" id="title">Upgrade Nas4Free from 9.3.0.2 to 10.2.0.2</h1>
+    <span class="f6 gray">March 11, 2016</span>
+
+      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+        <p>I upgraded my nas machine which is based on <a href="http://www.nas4free.org">nas4free</a> this wednesday.
+Everything went smooth. I made a backup of my current configuration. I uploaded the new <code>10.2.0.2.2332</code> image and after some minutes my server reboots automatically.
+After this I was able to login. The <a href="https://sourceforge.net/projects/nas4free/files/NAS4Free-10.2.0.2/10.2.0.2.2332/">upgrade procedure</a> described to restore my previous configuration.
+But this failed. The browser showed me the error <code>XML error: Not well-formed (invalid token) at line 1</code>. I assume the encrypted version of my configuration can not be decrypted.
+After reading some blog posts i found <a href="https://johncireland.wordpress.com/2016/02/13/decrypt-or-encrypt-nas4free-config/">this one</a>.
+So i followed the steps described there to decrypt my configuration. With success. I decrypted my configuration with</p>
+
+<pre><code>openssl enc -aes-256-cbc -d -a -in &lt;my-encrypted-config-file&gt; -out decrypted-version.xml
+</code></pre>
+
+<p>I created an issue on the <a href="(https://sourceforge.net/p/nas4free/bugs/276/)">sourceforge bugtracker</a>.</p>
+
+<p>Restoring the decrypted configuration was no issue for nas4free. I was able to upgrade my nas4free machine to version 10.2.0.2 without any big issues.</p>
+
+<p>Nice!</p>
+
+      </article>
+
+      
+      <span class="f6 gray mv3" title="Lastmod: March 11, 2016. Published at: 2016-03-11.">
+        
+      </span>
+
+      
+
+  </section>
+
+  <footer>
+    <div>
+      <p class="f6 gray mt6 lh-copy">
+        © 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. Made by <a href='https://twitter.com/siegerts'>@siegerts</a>. </br><a href='impressum'>Impressum</a>'
+      </p>
+    </div>
+  </footer>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+  </body>
+  </html>
+</body>

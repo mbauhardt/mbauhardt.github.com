@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on mb&#39;s blog</title>
+    <link>https://mbauhardt.github.io/tags/</link>
+    <description>Recent content in Tags on mb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;impressum&#39;&gt;Impressum&lt;/a&gt;&#39;</copyright>
+    <lastBuildDate>Mon, 18 Mar 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mbauhardt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git</title>
+      <link>https://mbauhardt.github.io/tags/git/</link>
+      <pubDate>Mon, 18 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gpg</title>
+      <link>https://mbauhardt.github.io/tags/gpg/</link>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jekyll Bootstrap</title>
+      <link>https://mbauhardt.github.io/tags/jekyll-bootstrap/</link>
+      <pubDate>Sun, 17 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/jekyll-bootstrap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Keychain</title>
+      <link>https://mbauhardt.github.io/tags/keychain/</link>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/keychain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://mbauhardt.github.io/tags/linux/</link>
+      <pubDate>Sun, 24 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nas4free</title>
+      <link>https://mbauhardt.github.io/tags/nas4free/</link>
+      <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/nas4free/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ohmyzsh</title>
+      <link>https://mbauhardt.github.io/tags/ohmyzsh/</link>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/ohmyzsh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pass</title>
+      <link>https://mbauhardt.github.io/tags/pass/</link>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/pass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Password Store</title>
+      <link>https://mbauhardt.github.io/tags/password-store/</link>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/password-store/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberrypi</title>
+      <link>https://mbauhardt.github.io/tags/raspberrypi/</link>
+      <pubDate>Sun, 24 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solarized</title>
+      <link>https://mbauhardt.github.io/tags/solarized/</link>
+      <pubDate>Sun, 17 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/solarized/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zsh</title>
+      <link>https://mbauhardt.github.io/tags/zsh/</link>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/tags/zsh/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

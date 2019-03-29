@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html
+  class=""
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<meta name="keywords" content="raspberrypi,
+linux,
+">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="Change Size Of Partition On SDcard To Get More Space For My Raspberry Pi" />
+<meta property="og:site_name" content="mb&#39;s blog" />
+<meta property="og:image" content="" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<meta property="og:url" content="https://mbauhardt.github.io/post/2013/03/24/change-size-of-partition-on-sdcard-to-get-more-space-for-my-raspberry-pi/" />
+<meta property="og:locale" content="en-us" />
+<meta property="article:published_time" content="2013-03-24
+" /> <meta property="article:modified_time" content="2013-03-24
+" />
+
+
+<meta property="article:tag" content="raspberrypi" />
+<meta property="article:tag" content="linux" />
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@mbauhardt" />
+<meta name="twitter:creator" content="@mbauhardt" />
+<meta
+  name="twitter:title"
+  content="Change Size Of Partition On SDcard To Get More Space For My Raspberry Pi | mb&#39;s blog"
+/>
+<meta
+  name="twitter:description"
+  content="I&rsquo;m using my raspberry pi as a router on my private network. Yesterday i&rsquo;m getting the no space left on device error message. I recognized that only the half size of the sd card was used. So i had to resize the root partition.
+These steps you have todo to resize your /root partition. I did this on my arch linux arm installation.
+ Open fdisk fdisk /dev/mmcblk0 Hit option p to get a list of partitions.|"
+/>
+<meta name="twitter:image:src" content="" />
+<meta name="twitter:domain" content="https://mbauhardt.github.io/post/2013/03/24/change-size-of-partition-on-sdcard-to-get-more-space-for-my-raspberry-pi/" />
+
+
+    <title>Change Size Of Partition On SDcard To Get More Space For My Raspberry Pi</title>
+    <link rel="canonical" href="https://mbauhardt.github.io/post/2013/03/24/change-size-of-partition-on-sdcard-to-get-more-space-for-my-raspberry-pi/" />
+
+    <link
+      href=""
+      rel="alternate"
+      type="application/rss+xml"
+      title="Change Size Of Partition On SDcard To Get More Space For My Raspberry Pi"
+    />
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
+/>
+
+<link rel="stylesheet" href="https://mbauhardt.github.iocss/style.css" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
+/>
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+</html>
+
+<body
+  lang="en-us"
+  class="sans-serif w-90 w-80-m w-60-ns center mv2 mv5-ns"
+  itemscope
+  itemtype="http://schema.org/Article"
+>
+  
+  <span class="b">/ </span>
+  <a href="https://mbauhardt.github.io" class="b bb bw1 pb1 no-underline black">mb&#39;s blog</a>
+  <span class="b"> / </span>
+  <a href="/post" class="b bb bw1 pb1 no-underline black">blog</a>
+
+  <section id="main" class="mt5">
+    <h1 itemprop="name" id="title">Change Size Of Partition On SDcard To Get More Space For My Raspberry Pi</h1>
+    <span class="f6 gray">March 24, 2013</span>
+
+      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+        <p>I&rsquo;m using my <a href="http://www.raspberrypi.org/">raspberry pi</a> as a router on my private network.
+Yesterday i&rsquo;m getting the <em>no space left on device</em> error message.
+I recognized that only the half size of the sd card was used. So i had to resize the root partition.</p>
+
+<p>These steps you have todo to resize your /root partition. I did this on my arch linux arm installation.</p>
+
+<ul>
+<li>Open fdisk <code>fdisk /dev/mmcblk0</code></li>
+<li>Hit option <code>p</code> to get a list of partitions. You should see two partitions. The first is the /boot partition the second is the linux partition</li>
+<li>Delete the second partition with option <code>d</code></li>
+<li>Create a new partition wit option <code>n</code> and press enter to use the default answer on all following questions</li>
+<li>Exit <em>fdisk</em> with <code>w</code> to write the partition to disk</li>
+<li>reboot your raspberry with <code>reboot</code></li>
+<li>Resize filesystem with <code>resize2fs -p /dev/mmcblk0p2</code></li>
+</ul>
+
+<p>Thats it!</p>
+
+<p>Here are the steps i did as screenshots.</p>
+
+<p><img src="/screenshot_1.png" alt="fdisk" /></p>
+
+<p><img src="/screenshot_2.png" alt="fdisk" /></p>
+
+<p><img src="/screenshot_3.png" alt="fdisk" /></p>
+
+<p><img src="/screenshot_4.png" alt="fdisk" /></p>
+
+<p><img src="/screenshot_5.png" alt="fdisk" /></p>
+
+<p><img src="/screenshot_6.png" alt="fdisk" /></p>
+
+      </article>
+
+      
+      <span class="f6 gray mv3" title="Lastmod: March 24, 2013. Published at: 2013-03-24.">
+        
+      </span>
+
+      
+
+  </section>
+
+  <footer>
+    <div>
+      <p class="f6 gray mt6 lh-copy">
+        © 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. Made by <a href='https://twitter.com/siegerts'>@siegerts</a>. </br><a href='impressum'>Impressum</a>'
+      </p>
+    </div>
+  </footer>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+  </body>
+  </html>
+</body>

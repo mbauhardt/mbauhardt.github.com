@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html
+  class=""
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<meta name="keywords" content="jekyll-bootstrap,
+solarized,
+">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="Implement Solarized Color Theme For Jekyll Bootstrap" />
+<meta property="og:site_name" content="mb&#39;s blog" />
+<meta property="og:image" content="" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<meta property="og:url" content="https://mbauhardt.github.io/post/2013/03/17/implement-solarized-color-theme-for-jekyll-bootstrap/" />
+<meta property="og:locale" content="en-us" />
+<meta property="article:published_time" content="2013-03-17
+" /> <meta property="article:modified_time" content="2013-03-17
+" />
+
+
+<meta property="article:tag" content="jekyll-bootstrap" />
+<meta property="article:tag" content="solarized" />
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@mbauhardt" />
+<meta name="twitter:creator" content="@mbauhardt" />
+<meta
+  name="twitter:title"
+  content="Implement Solarized Color Theme For Jekyll Bootstrap | mb&#39;s blog"
+/>
+<meta
+  name="twitter:description"
+  content="I&rsquo;m a big fan of the solarized color scheme. I use solarized dark for
+ iTerm in combination with my fork of the agnoster ohmyzsh theme. Emacs Eclipse  And now i implemented some lines of css which provides the solarized dark color theme for my blog, created with jekyll bootstrap. I created a file called solarized-dark.css.
+/* base03 #002b36 base02 #073642 base01 #586e75 base00 #657b83 base0 #839496 base1 #93a1a1 base2 #eee8d5 base3 #fdf6e3 yellow #b58900 orange #cb4b16 red #dc322f magenta #d33682 violet #6c71c4 blue #268bd2 cyan #2aa198 green #859900 base0: primary content base1: optional emphasized content base01: secondary content base02: background highlights base03: background */ body { background-color: #002b36; color: #839496; font-family: Menlo; } pre { border-style:solid; border-width:1px; border-color:#839496; } pre, code { background-color: #073642; color: #93a1a1; } a { color: #859900; } .|"
+/>
+<meta name="twitter:image:src" content="" />
+<meta name="twitter:domain" content="https://mbauhardt.github.io/post/2013/03/17/implement-solarized-color-theme-for-jekyll-bootstrap/" />
+
+
+    <title>Implement Solarized Color Theme For Jekyll Bootstrap</title>
+    <link rel="canonical" href="https://mbauhardt.github.io/post/2013/03/17/implement-solarized-color-theme-for-jekyll-bootstrap/" />
+
+    <link
+      href=""
+      rel="alternate"
+      type="application/rss+xml"
+      title="Implement Solarized Color Theme For Jekyll Bootstrap"
+    />
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
+/>
+
+<link rel="stylesheet" href="https://mbauhardt.github.iocss/style.css" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
+/>
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+</html>
+
+<body
+  lang="en-us"
+  class="sans-serif w-90 w-80-m w-60-ns center mv2 mv5-ns"
+  itemscope
+  itemtype="http://schema.org/Article"
+>
+  
+  <span class="b">/ </span>
+  <a href="https://mbauhardt.github.io" class="b bb bw1 pb1 no-underline black">mb&#39;s blog</a>
+  <span class="b"> / </span>
+  <a href="/post" class="b bb bw1 pb1 no-underline black">blog</a>
+
+  <section id="main" class="mt5">
+    <h1 itemprop="name" id="title">Implement Solarized Color Theme For Jekyll Bootstrap</h1>
+    <span class="f6 gray">March 17, 2013</span>
+
+      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+        <p>I&rsquo;m a big fan of the <a href="http://ethanschoonover.com/solarized">solarized color scheme</a>. I use solarized dark for</p>
+
+<ul>
+<li><a href="http://www.iterm2.com/">iTerm</a> in combination with my <a href="https://gist.github.com/3806415">fork</a> of the agnoster <a href="https://github.com/robbyrussell/oh-my-zsh">ohmyzsh theme</a>.</li>
+<li><a href="http://emacsformacosx.com/">Emacs</a></li>
+<li><a href="http://www.eclipse.org/">Eclipse</a></li>
+</ul>
+
+<p>And now i implemented some lines of css which provides the solarized dark color theme for my blog, created with jekyll bootstrap.
+I created a file called <em>solarized-dark.css</em>.</p>
+
+<pre><code>/*
+base03    #002b36
+base02    #073642
+base01    #586e75
+base00    #657b83
+base0     #839496
+base1     #93a1a1
+base2     #eee8d5
+base3     #fdf6e3
+
+yellow    #b58900
+orange    #cb4b16
+red       #dc322f
+magenta   #d33682
+violet    #6c71c4
+blue      #268bd2
+cyan      #2aa198
+green     #859900
+
+
+base0:  primary content
+base1:  optional emphasized content
+base01: secondary content
+
+base02: background highlights
+base03: background
+*/
+
+body {
+  background-color: #002b36;
+  color: #839496;
+  font-family: Menlo;
+}
+
+pre {
+  border-style:solid;
+  border-width:1px;
+  border-color:#839496;
+}
+
+pre, code {
+  background-color: #073642;
+  color: #93a1a1;
+}
+
+a {
+  color: #859900;
+}
+
+.navbar .brand {
+  text-shadow: 0 0 0 #000;
+}
+
+.navbar .nav&gt;li&gt;a {
+  text-shadow: 0 0 0 #000;
+}
+
+.navbar-inner {
+  background-color: #073642;
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+  border-style: none;
+}
+
+.tag_box a {
+  background-color: #b58900;
+  border:none;
+}
+</code></pre>
+
+<p>This file is included into the <em>default.html</em> file.</p>
+
+<pre><code>&lt;link href=&quot;css/solarized-dark.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre>
+
+<p>The file for solarized dark can be downloaded <a href="https://raw.github.com/mbauhardt/jekyll-bootstrap/mbauhardt.github.com/assets/themes/twitter/css/solarized-dark.css">here</a>.
+The solarized light file <a href="https://raw.github.com/mbauhardt/jekyll-bootstrap/mbauhardt.github.com/assets/themes/twitter/css/solarized-light.css">here</a>.</p>
+
+      </article>
+
+      
+      <span class="f6 gray mv3" title="Lastmod: March 17, 2013. Published at: 2013-03-17.">
+        
+      </span>
+
+      
+
+  </section>
+
+  <footer>
+    <div>
+      <p class="f6 gray mt6 lh-copy">
+        © 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. Made by <a href='https://twitter.com/siegerts'>@siegerts</a>. </br><a href='impressum'>Impressum</a>'
+      </p>
+    </div>
+  </footer>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+  </body>
+  </html>
+</body>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on mb&#39;s blog</title>
+    <link>https://mbauhardt.github.io/series/security/</link>
+    <description>Recent content in Security on mb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;impressum&#39;&gt;Impressum&lt;/a&gt;&#39;</copyright>
+    <lastBuildDate>Thu, 20 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mbauhardt.github.io/series/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keychain2Pass - Migrate Your OSX Keychain To Pass</title>
+      <link>https://mbauhardt.github.io/post/2017/07/20/keychain2pass-migrate-your-osx-keychain-to-pass/</link>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2017/07/20/keychain2pass-migrate-your-osx-keychain-to-pass/</guid>
+      <description>In my previous blog post wrote about a better GPG keychain. I&amp;rsquo;m using a yubikey to encrypt/decrypt documents.
+Why not using the yubikey key for my passwords too? So i decided to store my passwords no more in my OSX keychain. I wanted to switch from OSX keychain to pass.
+It turns out that the manual migration from the OSX keychain to pass is really time consuming. I was to lazy to it manually.</description>
+    </item>
+    
+    <item>
+      <title>A Better GPG Keychain</title>
+      <link>https://mbauhardt.github.io/post/2017/03/03/a-better-gpg-keychain/</link>
+      <pubDate>Fri, 03 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2017/03/03/a-better-gpg-keychain/</guid>
+      <description>Background My personal goal is to have a GPG keychain i use on more than one machine. I don&amp;rsquo;t want to loose all my signatures in case i lost my key. After reading the internet i figure it out how can i achieve a better GPG keychain.
+The approach of a master keypair and a bunch of subkeys will minimize the damage of the worst case (loosing my keypair). So i would like to explain what the benefit of subkeys are and how to generate subkeys.</description>
+    </item>
+    
+  </channel>
+</rss>

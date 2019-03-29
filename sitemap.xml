@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://mbauhardt.github.io/post/2017/07/20/keychain2pass-migrate-your-osx-keychain-to-pass/</loc>
+    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/post/2017/03/03/a-better-gpg-keychain/</loc>
+    <lastmod>2017-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/post/2016/03/11/upgrade-nas4free-from-9.3.0.2-to-10.2.0.2/</loc>
+    <lastmod>2016-03-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/post/2013/04/13/oh-my-zsh-bootstrap-a-small-oh-my-zsh-plugin-manager/</loc>
+    <lastmod>2013-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/post/2013/03/24/change-size-of-partition-on-sdcard-to-get-more-space-for-my-raspberry-pi/</loc>
+    <lastmod>2013-03-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/post/2013/03/18/using-git-to-create-backups/</loc>
+    <lastmod>2013-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/post/2013/03/17/implement-solarized-color-theme-for-jekyll-bootstrap/</loc>
+    <lastmod>2013-03-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/post/2013/03/16/setting-up-this-blog/</loc>
+    <lastmod>2013-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/impressum/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/git/</loc>
+    <lastmod>2013-03-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/gpg/</loc>
+    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/jekyll-bootstrap/</loc>
+    <lastmod>2013-03-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/keychain/</loc>
+    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/linux/</loc>
+    <lastmod>2013-03-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/nas4free/</loc>
+    <lastmod>2016-03-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/ohmyzsh/</loc>
+    <lastmod>2013-04-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/pass/</loc>
+    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/password-store/</loc>
+    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/post/</loc>
+    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/raspberrypi/</loc>
+    <lastmod>2013-03-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/series/security/</loc>
+    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/series/</loc>
+    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/solarized/</loc>
+    <lastmod>2013-03-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/</loc>
+    <lastmod>2013-03-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/tags/zsh/</loc>
+    <lastmod>2013-04-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mbauhardt.github.io/</loc>
+    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
