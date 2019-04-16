@@ -6,11 +6,22 @@
     <description>Recent content on mb&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;impressum&#39;&gt;Impressum&lt;/a&gt;&#39;</copyright>
-    <lastBuildDate>Thu, 20 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;https://mbauhardt.github.io/impressum&#39;&gt;Impressum&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 16 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mbauhardt.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Iris Keyboard Build Log</title>
+      <link>https://mbauhardt.github.io/post/2019/04/16/iris-keyboard-build-log/</link>
+      <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2019/04/16/iris-keyboard-build-log/</guid>
+      <description>Last year I started to type with a mechanical keyboard. I bought a Vortex Core. This keyboard was quite impressive for me because this keyboard is a mechanical one, I can program it and the size is small (40%).
+ 
+After some time I recognized, the programming mode is not convenient enough for me. There is no way to program my vortex core based on a config file. I have to press some keystrokes to reorder my keys.</description>
+    </item>
     
     <item>
       <title>Keychain2Pass - Migrate Your OSX Keychain To Pass</title>
