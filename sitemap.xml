@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mbauhardt.github.io/post/2019/05/12/iris-querty-layout/</loc>
+    <lastmod>2019-05-12T16:49:33+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mbauhardt.github.io/post/2019/04/16/iris-keyboard-build-log/</loc>
     <lastmod>2019-04-16T00:00:00+00:00</lastmod>
   </url>
@@ -76,7 +81,7 @@
   
   <url>
     <loc>https://mbauhardt.github.io/series/keyboard/</loc>
-    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-12T16:49:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -118,7 +123,7 @@
   
   <url>
     <loc>https://mbauhardt.github.io/post/</loc>
-    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-12T16:49:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -136,7 +141,7 @@
   
   <url>
     <loc>https://mbauhardt.github.io/series/</loc>
-    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-12T16:49:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -160,7 +165,7 @@
   
   <url>
     <loc>https://mbauhardt.github.io/</loc>
-    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-12T16:49:33+02:00</lastmod>
     <priority>0</priority>
   </url>
   
