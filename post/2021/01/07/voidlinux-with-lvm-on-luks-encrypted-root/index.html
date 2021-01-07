@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html
+  class=""
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<meta name="keywords" content="">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="Voidlinux With Lvm on Luks Encrypted Root" />
+<meta property="og:site_name" content="mb&#39;s blog" />
+<meta property="og:image" content="" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<meta property="og:url" content="https://mbauhardt.github.io/post/2021/01/07/voidlinux-with-lvm-on-luks-encrypted-root/" />
+<meta property="og:locale" content="en-us" />
+<meta property="article:published_time" content="2021-01-07
+" /> <meta property="article:modified_time" content="2021-01-07
+" />
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@mbauhardt" />
+<meta name="twitter:creator" content="@mbauhardt" />
+<meta
+  name="twitter:title"
+  content="Voidlinux With Lvm on Luks Encrypted Root | mb&#39;s blog"
+/>
+<meta
+  name="twitter:description"
+  content="Introduction This guide gives you an idea how to install voidlinux onto LVM with luks encrypted root partition but with a separate unencrypted efi and boot partition. I&rsquo;m using x86_64-musl instead glibc. Instead /dev/sda1, my SSD is a NVM based one, so the device i&rsquo;m using is /dev/nvme0n1. The laptop has 32G RAM.
+First, starting the live installer, login as root and do the following.
+Filesystem  $ wipeout --all /dev/nvme0n1 $ cfdisk /dev/nvme0n1  The goal is to have four partitions.|"
+/>
+<meta name="twitter:image:src" content="" />
+<meta name="twitter:domain" content="https://mbauhardt.github.io/post/2021/01/07/voidlinux-with-lvm-on-luks-encrypted-root/" />
+
+
+    <title>Voidlinux With Lvm on Luks Encrypted Root</title>
+    <link rel="canonical" href="https://mbauhardt.github.io/post/2021/01/07/voidlinux-with-lvm-on-luks-encrypted-root/" />
+
+    <link
+      href=""
+      rel="alternate"
+      type="application/rss+xml"
+      title="Voidlinux With Lvm on Luks Encrypted Root"
+    />
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
+/>
+
+<link rel="stylesheet" href="https://mbauhardt.github.iocss/style.css" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
+/>
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+</html>
+
+<body
+  lang="en-us"
+  class="sans-serif w-90 w-80-m w-60-ns center mv2 mv5-ns"
+  itemscope
+  itemtype="http://schema.org/Article"
+>
+  
+  <span class="b">/ </span>
+  <a href="https://mbauhardt.github.io" class="b bb bw1 pb1 no-underline black">mb&#39;s blog</a>
+  <span class="b"> / </span>
+  <a href="/post" class="b bb bw1 pb1 no-underline black">blog</a>
+
+  <section id="main" class="mt5">
+    <h1 itemprop="name" id="title">Voidlinux With Lvm on Luks Encrypted Root</h1>
+    <span class="f6 gray">January 7, 2021</span>
+
+      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+        
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This guide gives you an idea how to install voidlinux onto LVM with
+luks encrypted root partition but with a separate unencrypted efi and
+boot partition. I&rsquo;m using <em>x86_64-musl</em> instead glibc. Instead <em>/dev/sda1</em>,
+my SSD is a NVM based one, so the device i&rsquo;m using is <em>/dev/nvme0n1</em>.
+The laptop has 32G RAM.</p>
+
+<p>First, starting the live installer, login as root and do the following.</p>
+
+<h2 id="filesystem">Filesystem</h2>
+
+<pre><code>    $ wipeout --all /dev/nvme0n1
+    $ cfdisk /dev/nvme0n1
+</code></pre>
+
+<p>The goal is to have four partitions.</p>
+
+<ul>
+<li>EFI -         /dev/nvme0n1p1, EFI System, 1G</li>
+<li>BOOT -        /dev/nvme0n1p2, Linux Filesystem, 1G</li>
+<li>Void -        /dev/nvme0n1p3, Linux Filesystem, 300G</li>
+<li>Free partition for another OS e.g. NetBSD</li>
+</ul>
+
+<p>Let&rsquo;s create filesystems</p>
+
+<pre><code>    $ mkfs.vfat -nBOOT -F32 /dev/nvme0n1p1
+    $ mkfs.ext2 -L grub /dev/nvme0n1p2
+    $ cryptsetup luksFormat --type=luks -s=512 /dev/nvme0n1p3
+    $ cryptsetup open /dev/nvme0n1p3 void-vg
+    $ vgcreate void-vg /dev/mapper/void-vg
+    $ lvcreate --name root-lv -L 52G void-vg
+    $ lvcreate --name swap-lv -L 48G void-vg
+    $ lvcreate --name home-lv -L 180G  void-vg
+    $ mkfs.xfs -L root /dev/void-vg/root-lv
+    $ mkfs.xfs -L home /dev/void-vg/home-lv
+    $ mkswap /dev/void-vg/swap-lv
+</code></pre>
+
+<h2 id="efi-and-boot-partition">EFI and Boot partition</h2>
+
+<pre><code>    $ mkdir /mnt/efi
+    $ mount -o rw,noatime /dev/nvme0n1p1 /mnt/efi
+    $ mkdir /mnt/boot
+    $ mount -o rw,noatime /dev/nvme0n1p2 /mnt/boot
+</code></pre>
+
+<h2 id="setup-chroot-and-installing-base-system">Setup Chroot and Installing Base System</h2>
+
+<pre><code>    $ mount /dev/void-vg/root-lv /mnt
+    $ for dir in dev proc sys run; do mkdir -p /mnt/$dir ; mount --rbind /$dir /mnt/$dir ; mount --make-rslave /mnt/$dir ; done
+    $ mkdir -p /mnt/home
+    $ mount /dev/void-vg/home-lv /mnt/home
+    $ XBPS_ARCH=x86_64-musl xbps-install -Sy -R https://alpha.de.repo.voidlinux.org/current/musl -r /mnt base-system cryptsetup grub-x86_64-efi lvm2
+</code></pre>
+
+<h2 id="chroot">Chroot</h2>
+
+<pre><code>    $ chroot /mnt
+    $ chown root:root /
+    $ chmod 755 /
+    $ passwd root
+    $ echo voidvm &gt; /etc/hostname
+    $ echo &quot;LANG=en_US.UTF-8&quot; &gt; /etc/locale.conf
+    $ echo &quot;en_US.UTF-8 UTF-8&quot; &gt;&gt; /etc/default/libc-locales
+</code></pre>
+
+<p>Edit <em>/etc/fstab</em></p>
+
+<pre><code>    # &lt;file system&gt;          &lt;dir&gt;      &lt;type&gt;     &lt;options&gt;                &lt;dump&gt;  &lt;pass&gt;
+    tmpfs                    /tmp       tmpfs      defaults,nosuid,nodev    0       0
+    /dev/void-vg/root-lv     /          xfs        defaults                 0       0
+    /dev/void-vg/home-lv     /home      xfs        defaults                 0       0
+    /dev/void-vg/swap-lv     swap       swap       defaults                 0       0
+    /dev/nvme0n1p1           /efi       vfat       defaults                 0       0
+    /dev/nvme0n1p2           /boot      ext2       defaults                 0       0
+</code></pre>
+
+<h2 id="configure-and-install-grub">Configure and Install GRUB</h2>
+
+<p>Add the following line to <em>/etc/default/grub</em></p>
+
+<pre><code>    GRUB_ENABLE_CRYPTODISK=y
+</code></pre>
+
+<p>Find the UUID of the root device</p>
+
+<pre><code>    $ blkid -o value -s UUID /dev/nvme0n1p3
+</code></pre>
+
+<p>Edit the <em>/etc/default/grub</em> and edit line <em>GRUB_CMDLINE_LINUX_DEFAULT=</em>
+and append at the end the following</p>
+
+<pre><code>    rd.lvm.vg=voidvm rd.luks.uuid=&lt;UUID&gt;
+</code></pre>
+
+<p>Make sure the UUID matches the one for the <em>nvme0n1p3</em>.</p>
+
+<p>Edit the <em>/etc/default/grub</em> and edit line <em>GRUB_CMDLINE_LINUX_DEFAULT=</em>
+and append at the end the following</p>
+
+<pre><code>    resume=/dev/mapper/void--vg-swap--lv
+</code></pre>
+
+<p>Install Grub</p>
+
+<pre><code>    $ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=&quot;Void Linux&quot;
+</code></pre>
+
+<p>Regenerate the configs</p>
+
+<pre><code>    $ xbps-reconfigure -fa
+</code></pre>
+
+<h2 id="reboot">Reboot</h2>
+
+<pre><code>    # exit the chroot
+    $ exit
+    $ reboot
+</code></pre>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+<li><a href="https://docs.voidlinux.org/installation/guides/fde.html">https://docs.voidlinux.org/installation/guides/fde.html</a></li>
+<li><a href="https://gist.github.com/gbrlsnchs/9c9dc55cd0beb26e141ee3ea59f26e21">https://gist.github.com/gbrlsnchs/9c9dc55cd0beb26e141ee3ea59f26e21</a></li>
+</ul>
+
+      </article>
+
+      
+      <span class="f6 gray mv3" title="Lastmod: January 7, 2021. Published at: 2021-01-07.">
+        
+      </span>
+
+      
+        <section class="mt4">
+          
+          
+          <h3>👋 Related posts in the <a href="/series/" class="b bb bw1 pb1 no-underline black">[void-linux]</a> series...</h3>
+      
+          
+         
+          
+            <div class="ph2 i">
+              No follow up posts yet. Check back soon!
+            </div>    
+          
+        </section>
+      
+
+  </section>
+
+  <footer>
+    <div>
+      <p class="f6 gray mt6 lh-copy">
+        © 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. Made by <a href='https://twitter.com/siegerts'>@siegerts</a>. </br><a href='/impressum'>Impressum</a>
+      </p>
+    </div>
+  </footer>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+  </body>
+  </html>
+</body>

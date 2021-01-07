@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;. &lt;/br&gt;&lt;a href=&#39;https://mbauhardt.github.io/impressum&#39;&gt;Impressum&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 12 May 2019 16:49:33 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jan 2021 08:51:37 +0100</lastBuildDate>
     
 	<atom:link href="https://mbauhardt.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Voidlinux With Lvm on Luks Encrypted Root</title>
+      <link>https://mbauhardt.github.io/post/2021/01/07/voidlinux-with-lvm-on-luks-encrypted-root/</link>
+      <pubDate>Thu, 07 Jan 2021 08:51:37 +0100</pubDate>
+      
+      <guid>https://mbauhardt.github.io/post/2021/01/07/voidlinux-with-lvm-on-luks-encrypted-root/</guid>
+      <description>Introduction This guide gives you an idea how to install voidlinux onto LVM with luks encrypted root partition but with a separate unencrypted efi and boot partition. I&amp;rsquo;m using x86_64-musl instead glibc. Instead /dev/sda1, my SSD is a NVM based one, so the device i&amp;rsquo;m using is /dev/nvme0n1. The laptop has 32G RAM.
+First, starting the live installer, login as root and do the following.
+Filesystem  $ wipeout --all /dev/nvme0n1 $ cfdisk /dev/nvme0n1  The goal is to have four partitions.</description>
+    </item>
     
     <item>
       <title>Iris Querty Layout</title>

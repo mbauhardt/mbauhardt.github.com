@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mbauhardt.github.io/post/2021/01/07/voidlinux-with-lvm-on-luks-encrypted-root/</loc>
+    <lastmod>2021-01-07T08:51:37+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mbauhardt.github.io/post/2019/05/12/iris-querty-layout/</loc>
     <lastmod>2019-05-12T16:49:33+02:00</lastmod>
   </url>
@@ -123,7 +128,7 @@
   
   <url>
     <loc>https://mbauhardt.github.io/post/</loc>
-    <lastmod>2019-05-12T16:49:33+02:00</lastmod>
+    <lastmod>2021-01-07T08:51:37+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -158,6 +163,12 @@
   </url>
   
   <url>
+    <loc>https://mbauhardt.github.io/series/void-linux/</loc>
+    <lastmod>2021-01-07T08:51:37+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mbauhardt.github.io/tags/zsh/</loc>
     <lastmod>2013-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -165,7 +176,7 @@
   
   <url>
     <loc>https://mbauhardt.github.io/</loc>
-    <lastmod>2019-05-12T16:49:33+02:00</lastmod>
+    <lastmod>2021-01-07T08:51:37+01:00</lastmod>
     <priority>0</priority>
   </url>
   
